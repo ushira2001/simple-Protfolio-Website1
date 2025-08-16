@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ushira Sankalpa Karunarathna | Business Analyst</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom CSS for animations and additional styling */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        .delay-100 {
+            animation-delay: 0.1s;
+        }
+        
+        .delay-300 {
+            animation-delay: 0.3s;
+        }
+        
+        .hover-pulse:hover {
+            animation: pulse 1.5s infinite;
+        }
+        
+        .skill-bar {
+            height: 8px;
+            background-color: #e5e7eb;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .skill-progress {
+            height: 100%;
+            background-color: #000;
+            border-radius: 4px;
+            transition: width 1.5s ease-in-out;
+        }
+        
+        .hover-scale {
+            transition: transform 0.3s ease;
+        }
+        
+        .hover-scale:hover {
+            transform: scale(1.02);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: black;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900 font-sans">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-sm z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="text-xl font-bold text-black">USK</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-4">
+                        <a href="#home" class="nav-link px-3 py-2 text-sm font-medium hover:text-black">Home</a>
+                        <a href="#about" class="nav-link px-3 py-2 text-sm font-medium hover:text-black">About</a>
+                        <a href="#skills" class="nav-link px-3 py-2 text-sm font-medium hover:text-black">Skills</a>
+                        <a href="#portfolio" class="nav-link px-3 py-2 text-sm font-medium hover:text-black">Portfolio</a>
+                        <a href="#contact" class="nav-link px-3 py-2 text-sm font-medium hover:text-black">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-black focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 text-base font-medium">Home</a>
+                <a href="#about" class="block px-3 py-2 text-base font-medium">About</a>
+                <a href="#skills" class="block px-3 py-2 text-base font-medium">Skills</a>
+                <a href="#portfolio" class="block px-3 py-2 text-base font-medium">Portfolio</a>
+                <a href="#contact" class="block px-3 py-2 text-base font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center pt-16 pb-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div class="fade-in">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">Ushira Sankalpa Karunarathna</h1>
+                <h2 class="text-xl md:text-2xl font-medium text-gray-600 mb-6">Business Analysis & Management Enthusiast | Data-Driven Decision Maker</h2>
+                <p class="text-gray-700 mb-8 max-w-lg">
+                    Passionate about business analysis with practical experience in auditing and strategy. 
+                    Committed to bridging the gap between theoretical knowledge and practical application 
+                    to drive business success through data-driven insights.
+                </p>
+                <div class="flex gap-4">
+                    <a href="#portfolio" class="bg-black text-white px-6 py-3 rounded-md hover:bg-gray-800 transition duration-300">View Portfolio</a>
+                    <a href="#contact" class="border border-black px-6 py-3 rounded-md hover:bg-gray-100 transition duration-300">Contact Me</a>
+                </div>
+            </div>
+            <div class="flex justify-center">
+                <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-gray-200 shadow-lg relative group">
+                    <img src="https://i.postimg.cc/637pr1MN/Whats-App-Image-2025-08-14-at-13-27-51-d0b82c18.jpg" 
+                         alt="Ushira Sankalpa Karunarathna" 
+                         class="w-full h-full object-cover transition-all duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white font-medium text-lg">Welcome</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-12 text-center">About Me</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Personal Profile</h3>
+                    <p class="text-gray-700 mb-6">
+                        I am an emerging professional in business analysis and management with a strong academic 
+                        foundation and practical experience in auditing and business strategy. My passion lies 
+                        in transforming complex data into actionable insights that drive business growth and 
+                        operational efficiency.
+                    </p>
+                    <p class="text-gray-700 mb-6">
+                        I believe in the power of data-driven decision making and constantly seek innovative 
+                        approaches to bridge the gap between theoretical knowledge and real-world business 
+                        challenges. My diverse educational background has equipped me with a unique perspective 
+                        that combines business management with financial expertise and analytical capabilities.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Education</h3>
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition duration-300 hover-scale">
+                            <h4 class="font-medium">Wayamba University of Sri Lanka</h4>
+                            <p class="text-gray-600">B.Sc. (Special) in Business Management</p>
+                            <p class="text-gray-500 text-sm">In Progress</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition duration-300 hover-scale">
+                            <h4 class="font-medium">Association of Accounting Technicians of Sri Lanka (AAT)</h4>
+                            <p class="text-gray-600">Passed Finalist</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition duration-300 hover-scale">
+                            <h4 class="font-medium">Institute of Chartered Accountants of Sri Lanka</h4>
+                            <p class="text-gray-600">Reading</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition duration-300 hover-scale">
+                            <h4 class="font-medium">Diploma in Business Analytics (DBA)</h4>
+                            <p class="text-gray-600">Reading</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8 text-center md:text-left animate-fade-in-up delay-300">
+                    <a href="https://files.fm/u/awyafhp7nu" 
+                       download="Ushira_Sankalpa_CV.pdf"
+                       class="bg-black text-white px-6 py-3 rounded-md hover:bg-gray-800 transition duration-300 inline-flex items-center gap-2 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                        <i class="fas fa-download"></i>
+                        Download My CV
+                    </a>
+                </div>
+            </div>
+            
+            <div class="mt-12">
+                <h3 class="text-xl font-semibold mb-4">Professional Experience</h3>
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 hover-scale">
+                    <h4 class="text-lg font-medium">AGS Associates (Chartered Accountants) – Audit Trainee</h4>
+                    <p class="text-gray-600 mb-4">2020–2021</p>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                        <li>Assisted in statutory audits for diverse clients across multiple industries</li>
+                        <li>Prepared detailed working papers and verified financial statements in compliance with auditing standards</li>
+                        <li>Gained practical experience in evaluating internal controls and tax compliance processes</li>
+                        <li>Contributed to identifying process improvements that enhanced audit efficiency by 15%</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-12 text-center">Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Skill 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 hover-scale">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-black flex items-center justify-center mr-4">
+                            <i class="fas fa-brain text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-medium">Management</h3>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress w-[90%]" data-width="90"></div>
+                    </div>
+                </div>
+                
+                <!-- Skill 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 hover-scale">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-black flex items-center justify-center mr-4">
+                            <i class="fas fa-lightbulb text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-medium">Creativity</h3>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress w-[85%]" data-width="85"></div>
+                    </div>
+                </div>
+                
+                <!-- Skill 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 hover-scale">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-black flex items-center justify-center mr-4">
+                            <i class="fas fa-hashtag text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-medium">Digital Marketing</h3>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress w-[75%]" data-width="75"></div>
+                    </div>
+                </div>
+                
+                <!-- Skill 4 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 hover-scale">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-black flex items-center justify-center mr-4">
+                            <i class="fas fa-handshake text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-medium">Negotiation</h3>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress w-[80%]" data-width="80"></div>
+                    </div>
+                </div>
+                
+                <!-- Skill 5 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 hover-scale">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-black flex items-center justify-center mr-4">
+                            <i class="fas fa-search text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-medium">Critical Thinking</h3>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress w-[95%]" data-width="95"></div>
+                    </div>
+                </div>
+                
+                <!-- Skill 6 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 hover-scale">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-black flex items-center justify-center mr-4">
+                            <i class="fas fa-users text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-medium">Leadership</h3>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress w-[88%]" data-width="88"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-12 text-center">Portfolio & Achievements</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Achievement 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 hover-scale">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 rounded-full bg-black flex items-center justify-center mr-4">
+                            <i class="fas fa-trophy text-white text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-medium">First Place Winner</h3>
+                            <p class="text-gray-600">Emerging Entrepreneur Business Idea Selection Competition, 2018</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">
+                        Recognized as the top innovator among 50+ participants for developing a sustainable business model that 
+                        addressed a pressing market need. The competition evaluated business viability, market potential, and 
+                        innovation potential.
+                    </p>
+                </div>
+                
+                <!-- More portfolio items can be added here -->
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 hover-scale">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 rounded-full bg-black flex items-center justify-center mr-4">
+                            <i class="fas fa-chart-line text-white text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-medium">Business Analysis Projects</h3>
+                            <p class="text-gray-600">Various academic and professional projects</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">
+                        Completed multiple business analysis projects that involved market research, competitive analysis, 
+                        and strategic recommendations that led to measurable improvements in organizational performance.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Additional space for future portfolio items -->
+            <div class="mt-12 text-center">
+                <p class="text-gray-600">More projects and achievements coming soon...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section (Optional) -->
+    <section id="services" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-12 text-center">Areas of Expertise</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 hover-scale">
+                    <div class="text-4xl mb-4 text-black">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3 class="text-xl font-medium mb-2">Business Analysis</h3>
+                    <p class="text-gray-700">
+                        Translating complex data into actionable business insights that drive strategic decision-making and operational improvements.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 hover-scale">
+                    <div class="text-4xl mb-4 text-black">
+                        <i class="fas fa-chess"></i>
+                    </div>
+                    <h3 class="text-xl font-medium mb-2">Strategic Planning</h3>
+                    <p class="text-gray-700">
+                        Developing comprehensive strategies that align with organizational goals and create sustainable competitive advantages.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 hover-scale">
+                    <div class="text-4xl mb-4 text-black">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                    </div>
+                    <h3 class="text-xl font-medium mb-2">Financial Analysis</h3>
+                    <p class="text-gray-700">
+                        Interpreting financial statements and performance metrics to assess business health and identify improvement opportunities.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-12 text-center">Get In Touch</h2>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Contact Information</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-black flex items-center justify-center mr-4">
+                                <i class="fas fa-envelope text-white"></i>
+                            </div>
+                            <a href="mailto:ushirasankalpa2001@gmail.com" class="hover:text-gray-600 transition duration-300">
+                                ushirasankalpa2001@gmail.com
+                            </a>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-black flex items-center justify-center mr-4">
+                                <i class="fas fa-phone text-white"></i>
+                            </div>
+                            <a href="tel:+94771217145" class="hover:text-gray-600 transition duration-300">
+                                +94 77 121 7145
+                            </a>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-black flex items-center justify-center mr-4">
+                                <i class="fab fa-linkedin-in text-white"></i>
+                            </div>
+                            <a href="https://linkedin.com/in/ushira-sankalpa-967919375" target="_blank" class="hover:text-gray-600 transition duration-300">
+                                linkedin.com/in/ushira-sankalpa-967919375
+                            </a>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-black flex items-center justify-center mr-4">
+                                <i class="fab fa-instagram text-white"></i>
+                            </div>
+                            <a href="https://instagram.com/ushira_sankalpa" target="_blank" class="hover:text-gray-600 transition duration-300">
+                                @ushira_sankalpa
+                            </a>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-black flex items-center justify-center mr-4">
+                                <i class="fab fa-twitter text-white"></i>
+                            </div>
+                            <a href="https://twitter.com/ushirasankalpa" target="_blank" class="hover:text-gray-600 transition duration-300">
+                                @ushirasankalpa
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Send Me a Message</h3>
+                    <form class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"></textarea>
+                        </div>
+                        <button type="submit" class="bg-black text-white px-6 py-3 rounded-md hover:bg-gray-800 transition duration-300 w-full hover-pulse">
+                            <span class="inline-flex items-center gap-2">
+                                <i class="fas fa-paper-plane"></i>
+                                Send Message
+                            </span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-2xl font-bold mb-4">Ushira Sankalpa Karunarathna</h2>
+                <p class="text-gray-400 mb-6">Business Analysis & Management Enthusiast | Data-Driven Decision Maker</p>
+                <div class="flex justify-center space-x-6 mb-6">
+                    <a href="https://linkedin.com/in/ushira-sankalpa-967919375" target="_blank" class="text-gray-400 hover:text-white transition duration-300 transform hover:scale-125">
+                        <i class="fab fa-linkedin-in text-xl"></i>
+                    </a>
+                    <a href="https://instagram.com/ushira_sankalpa" target="_blank" class="text-gray-400 hover:text-white transition duration-300 transform hover:scale-125">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                    <a href="https://twitter.com/ushirasankalpa" target="_blank" class="text-gray-400 hover:text-white transition duration-300 transform hover:scale-125">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                </div>
+                <p class="text-gray-500 text-sm">&copy; 2023 Ushira Sankalpa Karunarathna. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Animate skill bars when they come into view
+        function animateSkillBars() {
+            const skillBars = document.querySelectorAll('.skill-progress');
+            
+            skillBars.forEach(bar => {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const width = entry.target.getAttribute('data-width');
+                            entry.target.style.width = `${width}%`;
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.5 });
+                
+                observer.observe(bar);
+            });
+        }
+        
+        // Initialize animations when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            animateSkillBars();
+        });
+    </script>
+</body>
+</html>
